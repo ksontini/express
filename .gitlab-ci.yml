@@ -1,0 +1,4 @@
+include:
+  - project: 'dragonfly/ci-utils'
+    ref: dfy-340-new-workflow
+    file: 'pipelines/node.yaml'

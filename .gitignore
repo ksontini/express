@@ -1,0 +1,7 @@
+bower_components/
+coverage/
+junit.xml
+build/
+node_modules/
+.eslint.xml 
+*.log

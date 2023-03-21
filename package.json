@@ -1,0 +1,38 @@
+{
+  "name": "ipl_node_recruitement_exercise_2022",
+  "version": "1.0.0",
+  "description": "A nodejs api dev test",
+  "scripts": {
+    "test": "yarn jest --verbose --coverage ./*.test.js",
+    "serve": "nodemon index.js",
+    "lint": "eslint *.js ",
+    "lintArtifact": "eslint -f junit -o .eslint.xml *.js",
+    "makePdf": "md-to-pdf README.md  --launch-options  '{ \"args\": [\"--no-sandbox\"] }'",
+    "lint-fix": "eslint --fix *.js"
+  },
+  "author": "aan@ip-label.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mathjs": "^11.7.0",
+    "md-to-pdf": "^4.0.1",
+    "swagger-ui-express": "^3.0.6",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^26.6.3",
+    "jest-config": "^26.6.3",
+    "jest-junit": "^12.2.0",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
+  }
+}

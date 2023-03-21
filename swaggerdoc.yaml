@@ -1,0 +1,156 @@
+swagger: '2.0'
+info:
+  title: 'RECRUITMENT EXERCISE'
+  version: 0.1.0
+  description: File manager REST Api
+
+schemes:
+  - http
+  - https
+basePath: /
+tags:
+  - name: numbers 
+    description: Methods related to files management
+paths:
+  /Numbers:
+    get:
+      tags:
+        - numbers
+      summary: Return an array of the stored numbers
+      description: ''
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            type: array
+            items:
+              type: number
+        '500':
+          description: Operation failed
+    post:
+      tags:
+        - numbers
+      summary: Add numbers to the stored list
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: New Data
+          required: true
+          schema:
+            type: array
+            items:
+              type: number
+
+      responses:
+        '200':
+          description: "Successful operation: return current list"
+          schema:
+            type: array
+            items:
+              type: number
+ 
+        '500':
+          description: Operation failed
+        '501':
+          description: Non-numeric values
+          schema:
+            type: object
+            properties:
+              err:
+                type: string
+          examples:
+              err: Non-numeric values :eee,aaa
+    delete:
+      tags:
+        - numbers
+      summary: remove numbers to the stored list
+      description: ''
+      consumes:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: New Data
+          required: true
+          schema:
+            type: array
+            items:
+              type: number
+
+      responses:
+        '200':
+          description: "Successful operation: return current list"
+          schema:
+            type: array
+            items:
+              type: number
+ 
+        '500':
+          description: Operation failed
+        '501':
+          description: Non-numeric values
+          schema:
+            type: object
+            properties:
+              err:
+                type: string
+          examples:
+              err: Non-numeric values :eee,aaa
+  /Numbers/{operation}:
+    patch:
+      tags:
+        - numbers
+      summary: Apply a simple operation to all the menbers of the list
+      description: 'add, substract or divide all the list numbers by the value passed in parameter'
+      produces:
+        - application/json
+      parameters: 
+        - name: operation
+          in: path
+          description: selected operation
+          required: true
+          type: string
+          enum: ["divide","add","substract","multiply"]
+        - name: value
+          in: query
+          description: value 
+          required: true
+          type: number
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            type: array
+            items:
+              type: number
+        '500':
+          description: Operation failed
+
+  /getNumbersMeanValue:
+    get:
+      tags:
+        - numbers
+      summary: Return the mean value of the numbers list
+      description: ''
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            type: number
+
+        '500':
+          description: Operation failed
+
+
+responses: {}
+parameters: {}
+securityDefinitions: {}

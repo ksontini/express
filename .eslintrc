@@ -1,0 +1,17 @@
+{
+    "extends":[ "standard","plugin:security/recommended"],
+    "parser": "babel-eslint",
+    "plugins": ["jest", "security"],
+    "rules": {
+       "no-console": "warn",
+       "security/detect-non-literal-fs-filename":"off",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn"
+    },
+    "env": {
+      "jest/globals": true
+    }
+  }
+  

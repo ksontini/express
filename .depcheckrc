@@ -1,0 +1,1 @@
+ignores: ["nodemon","jest","jest-junit","nock","mock-os","nock", "jest-express","supertest","mock-argv",  "eslint","eslint-*","babel-eslint"]
